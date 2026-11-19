@@ -1,1 +1,16 @@
-<app-data-binding/>
+<!-- <app-data-binding/> -->
+
+<div class="border-b-2 border-gray-500 py-4 text-center">
+    <h1 class="text-3xl text-blue-700 font-mono">My Angular 22 App</h1>
+</div>
+<nav class="border-b-2 border-gray-500 px-6 py-4">
+    <ul class="flex gap-10 font-mono">
+        <li><a routerLink="pages/home" routerLinkActive="text-blue-700 font-bold">Home</a></li>
+        <li><a routerLink="pages/about" routerLinkActive="text-blue-700 font-bold">About</a></li>
+        <li><a routerLink="pages/contact" routerLinkActive="text-blue-700 font-bold">Contact</a></li>
+        <li><a routerLink="pages/products" routerLinkActive="text-blue-700 font-bold">Products</a></li>
+        <!-- href reloads the entire page when changing to another link, 
+         whereas routerLink only navigates within the app without refreshing everything -->
+    </ul>
+</nav>
+<router-outlet></router-outlet>
