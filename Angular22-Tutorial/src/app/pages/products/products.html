@@ -1,6 +1,34 @@
 <div>
     <div class="h-80 flex flex-col items-center justify-center text-center font-mono">
         <h2>Products Component</h2>
-        <p class="text-2xl mb-10">Welcome to the products page!</p>
+        <!-- <p class="text-2xl mb-10">Welcome to the products page!</p> -->
+
+        <!-- route parameter with routerLink -->
+        <!-- <nav class="flex gap-2">
+            <a [routerLink]="['/pages/product-details', 101]">Laptop</a>
+            <a [routerLink]="['/pages/product-details', 102]">Mobile</a>
+            <a [routerLink]="['/pages/product-details', 103]">Tablet</a>
+        </nav> -->
+
+        <!-- route parameter with Navigate() -->
+         <!-- <nav class="flex gap-2">
+            <button class="bg-blue-500 text-white rounded px-3 py-1" (click)="viewDetails(101)">Laptop</button>
+            <button class="bg-red-500 text-white rounded px-3 py-1" (click)="viewDetails(102)">Mobile</button>
+            <button class="bg-orange-500 text-white rounded px-3 py-1" (click)="viewDetails(103)">Tablet</button>
+        </nav> -->
+
+        <!-- query parameter with routerLink -->
+         <!-- <nav class="flex gap-2">
+            <a routerLink="/pages/products" [queryParams]="{category: 'laptop', sort:'price'}">Laptop</a>
+            <a routerLink="/pages/products" [queryParams]="{category: 'mobile', sort:'price'}">Mobile</a>
+            <a routerLink="/pages/products" [queryParams]="{category: 'tablet', sort:'price'}">Tablet</a>
+         </nav> -->
+
+          <!-- query parameter with Navigate() -->
+        <nav class="flex gap-2">
+            <button class="bg-blue-500 text-white rounded px-3 py-1" (click)="viewDetails('laptop')">Laptop</button>
+            <button class="bg-red-500 text-white rounded px-3 py-1" (click)="viewDetails('mobile')">Mobile</button>
+            <button class="bg-orange-500 text-white rounded px-3 py-1" (click)="viewDetails('tablet')">Tablet</button>
+        </nav>
     </div>
 </div>
