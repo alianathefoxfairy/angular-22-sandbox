@@ -33,15 +33,21 @@ export const routes: Routes = [
     },
     {
         path: 'pages/about',
-        component: About
+        // component: About
+        // Lazy loading
+        loadComponent: () => import('./pages/about/about').then(c => c.About)
     },
     {
         path: 'pages/contact',
-        component: Contact
+        //component: Contact
+        // Lazy loading
+        loadComponent: () => import('./pages/contact/contact').then(c => c.Contact)
     },
-    {
+    {   
         path: 'pages/products',
-        component: Products
+        //component: Products
+        // Lazy loading
+        loadComponent: () => import('./pages/products/products').then(c => c.Products)
     },
     {
         path: 'pages/product-details/:id',    //dynamic route parameter
@@ -49,30 +55,10 @@ export const routes: Routes = [
     },
     {
         path: 'pages/dashboard',
-        component: Dashboard,
-        children: [
-            {   // Important!
-                path: '',
-                redirectTo:'dashboardhome',
-                pathMatch:'full'
-            },
-            {
-                path: 'dashboardhome',
-                component:DashboardHome
-            },
-            {
-                path: 'profile',
-                component:Profile
-            },
-            {
-                path: 'settings',
-                component:Settings
-            },
-            {
-                path: 'orders',
-                component:Orders
-            }
-        ]
+        //component: Dashboard,
+        loadChildren: () => 
+            import('./pages/dashboard/dashboard.routes')
+                .then(r => r.DASHBOARD_ROUTES)
     },
     {   //must always be last in the list
         path: '**',
