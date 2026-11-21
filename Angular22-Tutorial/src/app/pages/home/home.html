@@ -1,6 +1,35 @@
 <div>
     <div class="h-80 flex flex-col items-center justify-center text-center font-mono">
-        <h2>Home Component</h2>
-        <p class="text-2xl mb-10">Welcome to the home page!</p>
+        <h2>{{title}}</h2>
+        <p class="text-2xl mb-10"><!--Total: {{price * quantity}}-->
+            <!--{{getMessage()}} avoid doing this for heavy complicated methods -->
+            <!-- avoid writing business logic in the template -->
+
+            <!-- <button class="bg-blue-500 text-white rounded px-3 py-1" (click)="showMessage('john')"> Click Here</button> -->
+
+            <!-- Event objects -->
+            <!-- <input type="text" (input)="getValue($event)"> -->
+            <!-- <input type="text" (keyup)="keyPressed($event)"> -->
+            <!-- <input type="text" (keyup.enter)="search()"> -->
+            <!-- <input type="text" (keyup.escape)="clear()"> -->
+
+            <!-- Template reference variables
+             <input class="border-2" type="text" #name>
+             <button class="bg-blue-500 text-white rounded px-3 py-1" (click)="showName(name.value)">Submit</button>
+
+             <input type="text" #email>
+             <button class="bg-blue-500 text-white rounded px-3 py-1" (click)="focusInput()">Focus</button>-->
+
+             <app-profile #profile></app-profile>
+             <button class="bg-blue-500 text-white rounded px-3 py-1" 
+                    (click)="profile.updateProfile()">Update</button>
+            <!-- <input type="text" appTextStyle #highlight="appTextStyle"> <-This no work
+            <button class="bg-blue-500 text-white rounded px-3 py-1" 
+                    (click)="highlight.changeStyle()">Change Style</button> -->
+
+            <ng-template #message>
+                <p>Hello Angular22</p>
+            </ng-template>
+        </p>
     </div>
 </div>

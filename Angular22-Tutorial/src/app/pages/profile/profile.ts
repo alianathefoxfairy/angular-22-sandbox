@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 })
 export class Profile {
   hasUnsavedChanges = true;
+
+  updateProfile(){
+    console.log("inside profile component");
+    
+  }
 }
