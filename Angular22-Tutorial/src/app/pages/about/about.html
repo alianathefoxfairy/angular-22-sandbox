@@ -1,6 +1,50 @@
-<div>
-    <div class="h-80 flex flex-col items-center justify-center text-center font-mono">
-        <h2>About Component</h2>
-        <p class="text-2xl mb-10">Welcome to the about page!</p>
+<div class="border-2 border-dashed border-gray-500 m-4">
+    <div class="h-100 flex flex-col items-center justify-center text-center font-mono">
+        <h2 class="text-3xl text-blue-500 mb-5">Directives</h2>
+        <!-- <p class="text-2xl mb-10">Welcome to the about page!</p> -->
+         <div class="text-center">
+            <b>Attribute Directive</b>
+            <div [ngClass]="isActive? 'active' : 'inactive'">
+                User status
+            </div>
+
+            <p [ngStyle]="{color:textColour}">
+                Welcome to Angular 22
+            </p>
+            <hr class="m-5">
+            <b>Structural Directive</b>
+
+            @if (isLoggedIn) {
+            <p> <!--*ngIf="isLoggedIn"-->Welcome Back!</p>
+            }
+
+            <ul>
+                @for ( user of users; track users) {
+                <li> <!-- *ngFor="let user of users">-->
+                    {{user}}
+                </li>
+                }
+            </ul>
+
+            
+            <div> <!-- [ngSwitch]="status"-->
+                @switch (status) {
+                    @case ('active') {
+                    <p> <!--*ngSwitchCase="'active'"-->User is active</p>
+                    }
+                    @case ('inactive') {
+                    <p> <!--*ngSwitchCase="'inactive'"-->User is inactive</p>
+                    }
+                    @default {
+                    <p> <!--*ngSwitchDefault-->Unknown Status</p>
+                    }
+                }
+
+                <b>Custom Directive</b>
+                <p appTextStyle>
+                    Example of custom directive
+                </p>
+            </div>
+         </div>
     </div>
 </div>

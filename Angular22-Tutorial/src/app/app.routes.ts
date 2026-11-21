@@ -10,7 +10,7 @@ import { dashboardMatchGuard } from './guards/dashboard-match-guard';
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'pages/login',
+        redirectTo: 'pages/about',
         pathMatch: 'full',
     },
     {

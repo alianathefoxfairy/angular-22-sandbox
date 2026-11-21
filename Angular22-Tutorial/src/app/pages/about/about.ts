@@ -1,9 +1,18 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { TextStyle } from '../../text-style';
 
 @Component({
-  imports: [],
+  imports: [CommonModule, TextStyle],
   selector: 'app-about',
   styleUrl: './about.scss',
   templateUrl: './about.html',
 })
-export class About {}
+export class About {
+  isActive = true;
+  textColour = 'red';
+
+  isLoggedIn = true;
+  users = ["John", "Dave", "Becky"];
+  status = 'active';
+}
