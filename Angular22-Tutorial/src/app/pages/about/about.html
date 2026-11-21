@@ -14,20 +14,36 @@
             <hr class="m-5">
             <b>Structural Directive</b>
 
-            @if (isLoggedIn) {
-            <p> <!--*ngIf="isLoggedIn"-->Welcome Back!</p>
+            <!-- Control Flow makes code easier to read and maintain -->
+            @if (role === 'admin') {
+            <p> <!--*ngIf="isLoggedIn; else loginTemplate"-->Welcome Admin!</p>
+            <!-- 
+            <ng-template #loginTemplate>
+                <p>Please login</p>
+            </ng-template>
+            -->
+            }
+            @else if (role === 'user') {
+                <p>Welcome User!</p>
+            }
+            @else {
+                <p>Please login</p>
             }
 
-            <ul>
-                @for ( user of users; track users) {
-                <li> <!-- *ngFor="let user of users">-->
+            <ul>    <!-- track lets angular to identify each item in the list efficiently when it changes -->
+                @for ( user of users; track user) {
+                <li> <!--*ngFor="let user of users">-->
                     {{user}}
                 </li>
                 }
+                @empty {    <!-- If array is empty -->
+                    <p> <!--*ngIf="users.length === 0">-->No users found.</p>
+                }
             </ul>
-
             
             <div> <!-- [ngSwitch]="status"-->
+                <!-- if else is used for checking multiple conditions, 
+                    switch is used to compare a single variable with multiple possible values -->
                 @switch (status) {
                     @case ('active') {
                     <p> <!--*ngSwitchCase="'active'"-->User is active</p>

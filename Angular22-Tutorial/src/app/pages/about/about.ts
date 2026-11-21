@@ -13,6 +13,8 @@ export class About {
   textColour = 'red';
 
   isLoggedIn = true;
-  users = ["John", "Dave", "Becky"];
+  role = "admin";
+  //users = ["John", "Dave", "Becky"];
+  users = [];
   status = 'active';
 }
