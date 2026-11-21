@@ -4,11 +4,14 @@ import { DashboardHome } from "../dashboard-home/dashboard-home";
 import { Profile } from "../profile/profile";
 import { Settings } from "../settings/settings";
 import { Orders } from "../orders/orders";
+import { dashChildGuard } from "../../guards/dash-child-guard";
+import { unsavedChangesGuard } from "../../guards/unsaved-changes-guard";
 
 export const DASHBOARD_ROUTES: Routes = [
     {
         path: '',
         component: Dashboard,
+        canActivateChild: [dashChildGuard],
         children: [
             {   // Important!
                 path: '',
@@ -21,7 +24,8 @@ export const DASHBOARD_ROUTES: Routes = [
             },
             {
                 path: 'profile',
-                component: Profile
+                component: Profile,
+                canDeactivate: [unsavedChangesGuard]
             },
             {
                 path: 'settings',

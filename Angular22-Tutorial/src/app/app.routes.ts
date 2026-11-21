@@ -1,17 +1,11 @@
 import { Routes } from '@angular/router';
 import { Home } from './pages/home/home';
-import { About } from './pages/about/about';
-import { Contact } from './pages/contact/contact';
-import { Products } from './pages/products/products';
 import { Login } from './pages/login/login';
 import { Register } from './pages/register/register';
 import { PageNotFound } from './pages/page-not-found/page-not-found';
 import { ProductDetails } from './pages/product-details/product-details';
-import { Dashboard } from './pages/dashboard/dashboard';
-import { DashboardHome } from './pages/dashboard-home/dashboard-home';
-import { Profile } from './pages/profile/profile';
-import { Settings } from './pages/settings/settings';
-import { Orders } from './pages/orders/orders';
+import { authGuard } from './guards/auth-guard';
+import { dashboardMatchGuard } from './guards/dashboard-match-guard';
 
 export const routes: Routes = [
     {
@@ -56,6 +50,8 @@ export const routes: Routes = [
     {
         path: 'pages/dashboard',
         //component: Dashboard,
+        // canActivate: [authGuard],
+        canMatch: [dashboardMatchGuard],
         loadChildren: () => 
             import('./pages/dashboard/dashboard.routes')
                 .then(r => r.DASHBOARD_ROUTES)
