@@ -3,8 +3,17 @@
         <h2 class="text-3xl text-purple-500 mb-5">Signals Component</h2>
 
         <div>
+            <!--<p>Total: {{total()}}</p>-->
+            <h2 class="text-3xl font-bold">Shopping Cart</h2>
+            <h2 class="text-3xl font-bold">Cart Total: {{cartService.total()}}</h2>
+            <button class="bg-blue-500 text-white rounded px-3 py-1 m-2" 
+                (click)="cartService.increaseQuantity()">Add Item</button>
+            <button class="bg-purple-500 text-white rounded px-3 py-1 m-2" 
+                (click)="cartService.changePrice(200)">Change Price</button>
+        </div>
+        <div>
             <h2 class="text-3xl font-bold">Count: {{count()}}</h2>
-            
+
             <button class="bg-green-500 text-white rounded px-3 py-1 m-2" 
                 (click)="increment()">Increase</button>
             <button class="bg-red-500 text-white rounded px-3 py-1 m-2" 
