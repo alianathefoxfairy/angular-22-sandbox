@@ -1,6 +1,7 @@
 # Angular22Tutorial
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 22.2.7.
+Following [FED Learning Angular 22 Tutorial playlist on Youtube](https://youtube.com/playlist?list=PLBz0Y_rVMoZi4vEI7jecAXo5H4vHDa1kV&si=N3OalIOxuGkUAQMP)
 
 ## Development server
 
