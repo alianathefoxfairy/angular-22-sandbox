@@ -6,6 +6,7 @@ import { PageNotFound } from './pages/page-not-found/page-not-found';
 import { ProductDetails } from './pages/product-details/product-details';
 import { authGuard } from './guards/auth-guard';
 import { dashboardMatchGuard } from './guards/dashboard-match-guard';
+import { Signal } from './pages/signal/signal';
 
 export const routes: Routes = [
     {
@@ -24,6 +25,10 @@ export const routes: Routes = [
     {
         path: 'pages/home',
         component: Home
+    },
+    {
+        path: 'pages/signal',
+        component: Signal 
     },
     {
         path: 'pages/about',
