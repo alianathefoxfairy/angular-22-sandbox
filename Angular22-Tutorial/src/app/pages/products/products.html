@@ -1,6 +1,10 @@
-<div>
+<div class="border-2 border-dashed border-gray-500 m-4">
     <div class="h-80 flex flex-col items-center justify-center text-center font-mono">
-        <h2>Products Component</h2>
+        <h2 class="text-3xl text-red-500 mb-10">Products Component</h2>
+        <div class="space-y-4">
+            <p class="text-lg font-semibold">Cart Items: {{shoppingService.cartCount()}}</p>
+            <button (click)="addProducts()" class="rounded-lg bg-blue-500 px-5 py-2 text-white">Add To Cart</button>
+        </div>
         <!-- <p class="text-2xl mb-10">Welcome to the products page!</p> -->
 
         <!-- route parameter with routerLink -->
@@ -25,10 +29,10 @@
          </nav> -->
 
           <!-- query parameter with Navigate() -->
-        <nav class="flex gap-2">
+        <!--<nav class="flex gap-2">
             <button class="bg-blue-500 text-white rounded px-3 py-1" (click)="viewDetails('laptop')">Laptop</button>
             <button class="bg-red-500 text-white rounded px-3 py-1" (click)="viewDetails('mobile')">Mobile</button>
             <button class="bg-orange-500 text-white rounded px-3 py-1" (click)="viewDetails('tablet')">Tablet</button>
-        </nav>
+        </nav>-->
     </div>
 </div>

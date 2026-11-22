@@ -1,5 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ShoppingService } from '../../services/shopping-service';
 
 @Component({
   imports: [RouterLink],
@@ -8,6 +9,13 @@ import { ActivatedRoute, Router, RouterLink } from '@angular/router';
   templateUrl: './products.html',
 })
 export class Products implements OnInit {
+
+  protected shoppingService = inject(ShoppingService);
+
+  addProducts(){
+    this.shoppingService.addToCart();
+  }
+
   private router = inject(Router);
   private activatedRoute = inject(ActivatedRoute);
 

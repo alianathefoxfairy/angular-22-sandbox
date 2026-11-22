@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { ShoppingService } from '../../services/shopping-service';
 
 @Component({
   imports: [],
@@ -6,4 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './contact.scss',
   templateUrl: './contact.html',
 })
-export class Contact {}
+export class Contact {
+  protected shoppingService = inject(ShoppingService);
+
+}
