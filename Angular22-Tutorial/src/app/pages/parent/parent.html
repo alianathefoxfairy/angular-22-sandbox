@@ -1,0 +1,18 @@
+<div class="flex gap-6 m-10">
+    <!-- Parent -->
+    <div class="w-1/2 rounded-lg border p-6 shadow">
+        <h2 class="mb-4 text-xl font-semibold">Parent Component</h2>
+        <p class="mb-2">Selected Username: <strong>{{selectedUser}}</strong></p>
+        <p class="mb-2">Quantity: <strong>{{quantity()}}</strong></p>
+    </div>
+
+    <!-- Child -->
+     <div class="w-1/2 rounded-lg border p-6 shadow">
+        <app-child 
+        [username]="userName" 
+        (saved)="handleSave()" 
+        (selected)="handleSelection($event)" 
+        [(quantity)]="quantity">
+        </app-child>
+    </div>
+</div>

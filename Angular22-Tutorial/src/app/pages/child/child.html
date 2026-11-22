@@ -1,0 +1,15 @@
+<h2 class="mb-4 text-xl font-semibold">Child Component</h2>
+<p class="mb-2">
+    Username: <strong>{{username()}}</strong>
+</p>
+
+<p class="mb-2">
+    Quantity: <strong>{{quantity()}}</strong>
+</p>
+
+<div class="flex gap-2">
+    <button class="rounded bg-green-500 px-3 py-2 text-white" (click)="onSave()">Save</button>
+    <button class="rounded bg-blue-500 px-3 py-2 text-white" (click)="selectUser()">Selected User</button>
+    <button class="rounded bg-purple-500 px-3 py-2 text-white" (click)="increase()">Increase</button>
+    <button class="rounded bg-red-500 px-3 py-2 text-white" (click)="decrease()">Decrease</button>
+</div>

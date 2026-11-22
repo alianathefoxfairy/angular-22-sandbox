@@ -7,11 +7,12 @@ import { ProductDetails } from './pages/product-details/product-details';
 import { authGuard } from './guards/auth-guard';
 import { dashboardMatchGuard } from './guards/dashboard-match-guard';
 import { Signal } from './pages/signal/signal';
+import { Parent } from './pages/parent/parent';
 
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'pages/about',
+        redirectTo: 'pages/parent',
         pathMatch: 'full',
     },
     {
@@ -29,6 +30,10 @@ export const routes: Routes = [
     {
         path: 'pages/signal',
         component: Signal 
+    },
+    {
+        path: 'pages/parent',
+        component: Parent 
     },
     {
         path: 'pages/about',
