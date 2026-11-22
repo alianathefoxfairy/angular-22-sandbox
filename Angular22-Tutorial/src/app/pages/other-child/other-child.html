@@ -13,16 +13,16 @@
                 {{userName()}}
             </p>
         </div>
-        <div class="grid md:grid-cols-2">
-            <div class="rounded-xl bg-pink-50 p-4">
+        <div class="grid md:grid-cols-2 rounded-xl bg-pink-50 ">
+            <div class="p-4">
                 <p class="text-sm text-pink-500">Quantity Received</p>
                 <p class="mt-1 text-xl font-bold text-pink-700">
                     {{quantityValue()}}
                 </p>
             </div>
 
-            <div class="rounded-xl bg-pink-50 p-5">
-                <div class="flex gap-3 justify-center">
+            <div class="p-5">
+                <div class="flex gap-3 justify-center ml-12">
                     <button (click)="increase()" class="rounded-lg bg-green-500 px-5 py-3 font-bold text-white hover:bg-green-700">
                         +1 
                     </button>
@@ -33,11 +33,11 @@
             </div>
         </div>
         
-        <button (click)="increaseQuantity()" class="rounded-lg bg-orange-500 px-5 py-3 font-semibold text-white hover:bg-orange-700">
-            Increase Parent Quantity
-        </button>
+        <!--<button (click)="increaseQuantity()" class="rounded-lg bg-orange-500 px-5 py-3 font-semibold text-white hover:bg-orange-700">
+            +1 Parent Quantity
+        </button>-->
 
-        <p class="mt-4">
+        <p class="mt-4 p-2">
             Example of viewChild(): <b class="text-pink-700">{{message()}}</b>
         </p>
     </div>
