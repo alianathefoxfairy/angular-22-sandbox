@@ -1,0 +1,66 @@
+<div class="min-h-screen bg-gradient-to-br from-indigo-50 via-white to-purple-50 p-8">
+    <p class="m-5 float-right text-3xl font-bold text-blue-700">
+        Notifications: <b class="text-red-700">{{cartService.notifications()}}</b>
+    </p>
+    
+    <div class="mx-auto max-w-5xl">
+        <!-- Header -->
+        <div class="mb-8 text-center">
+            <h1 class="text-4xl font-bold text-indigo-700">Component Communication</h1>
+            <p class="mt-2 text-gray-600">
+                Communication using <span class="font-bold text-purple-600">input() | output() | model() </span>
+            </p>
+        </div>
+
+        <div class="grid gap-6 md:grid-cols-2">
+            <!-- Parent -->
+            <div class="rounded-2xl bg-indigo-600 p-6 text-white shadow-xl">
+                <div class="mb-4 flex items-center gap-3">
+                    <div>
+                        <h2 class="text-xl font-bold">Parent Component</h2>
+                        <p class="text-sm text-indigo-200">Sending Data</p>
+                    </div>
+                </div>
+
+                <div class="space-y-3">
+                    <div class="rounded-xl bg-white/10 p-4">
+                        <p class="text-sm text-indigo-200">Username</p>
+                        <p class="text-lg font-semibold">
+                            {{username}}
+                        </p>
+                    </div>
+
+                    <div class="rounded-xl bg-white/10 p-4">
+                        <p class="text-sm text-indigo-200">Quantity</p>
+                        <p class="text-lg font-semibold">
+                            {{quantity}}
+                        </p>
+                    </div>
+                </div>
+
+                <p class="mt-4 text-lg text-white font-bold">Parent Quantity: {{parentQuantity}}</p>
+
+                <div class="mt-4 flex flex-wrap gap-3">
+                    <button (click)="changeChildMessage()" class="rounded-lg bg-pink-500 px-5 py-3 font-semibold text-white shadow hover:bg-pink-700">Change Child Message</button>
+                    <button (click)="resetChildMessage()" class="rounded-lg bg-gray-500 px-5 py-3 font-semibold text-white shadow hover:bg-gray-700">Reset Child Message</button>
+                </div>
+            </div>
+
+            <!-- Child -->
+            <app-other-child [userName]="username" [quantityValue]="quantity"
+            (quantityChanged)="updateQuantity($event)"
+            [(quantity)]="quantity">
+            </app-other-child>
+        </div>
+
+        <!-- Footer -->
+         <div class="mt-8 rounded-xl border border-indigo-200 bg-indigo-50 p-5 text-center">
+            <p class="font-semibold text-indigo-700">
+                Parent -> Child | Child -> Parent | Parent <-> Child
+            </p>
+            <p class="mt-1 text-sm text-gray-600">
+                Data is passed using the <span class="font-bold text-purple-600">input() | output() | model() </span> Signal API
+            </p>
+         </div>
+    </div>
+</div>

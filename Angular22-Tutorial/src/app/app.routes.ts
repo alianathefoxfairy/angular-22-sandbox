@@ -8,11 +8,12 @@ import { authGuard } from './guards/auth-guard';
 import { dashboardMatchGuard } from './guards/dashboard-match-guard';
 import { Signal } from './pages/signal/signal';
 import { Parent } from './pages/parent/parent';
+import { OtherParent } from './pages/other-parent/other-parent';
 
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'pages/parent',
+        redirectTo: 'pages/other-parent',
         pathMatch: 'full',
     },
     {
@@ -34,6 +35,10 @@ export const routes: Routes = [
     {
         path: 'pages/parent',
         component: Parent 
+    },
+    {
+        path: 'pages/other-parent',
+        component: OtherParent 
     },
     {
         path: 'pages/about',
