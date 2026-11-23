@@ -15,26 +15,34 @@
 
             <!-- Posts -->
             <div class="space-y-4">
+                @if (postsResource.isLoading()) {
+                    <p>Loading posts...</p>
+                }
+                @else if (postsResource.error()) {
+                    <p>Failed to load posts. Please contact support if problem continues to occur.</p>
+                }
+                @else if (postsResource.hasValue()) {
+                    <!-- @for (post of posts(); track post.id) { -->
+                    @for (post of postsResource.value(); track post.id) {
+                    <div class="rounded-lg bg-white p-5 shadow-sm">
+                        <div class="flex items-start justify-between">
+                            <div>
+                                <h2 class="font-semibold text-slate-800">{{post.title}}</h2>
+                                <p class="mt-2 text-sm text-slate-500">{{post.body}}</p>
+                                <p class="mt-2 text-xs text-salte-400">
+                                    Post Author: {{post.userId}}
+                                    |
+                                    Post ID: {{post.id}}
+                                </p>
+                            </div>
 
-                @for (post of posts(); track post.id) {
-                <div class="rounded-lg bg-white p-5 shadow-sm">
-                    <div class="flex items-start justify-between">
-                        <div>
-                            <h2 class="font-semibold text-slate-800">{{post.title}}</h2>
-                            <p class="mt-2 text-sm text-slate-500">{{post.body}}</p>
-                            <p class="mt-2 text-xs text-salte-400">
-                                Post Author: {{post.userId}}
-                                |
-                                Post ID: {{post.id}}
-                            </p>
-                        </div>
-
-                        <div class="flex gap-2">
-                            <button (click)="updatePost(post)" class="rounded bg-amber-100 px-3 py-1 text-sm text-amber-700">Edit</button>
-                            <button (click)="removePost(post.id)" class="rounded bg-red-100 px-3 py-1 text-sm text-red-700">Remove</button>
+                            <div class="flex gap-2">
+                                <button (click)="updatePost(post)" class="rounded bg-amber-100 px-3 py-1 text-sm text-amber-700">Edit</button>
+                                <button (click)="removePost(post.id)" class="rounded bg-red-100 px-3 py-1 text-sm text-red-700">Remove</button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    }
                 }
             </div>
         </div>

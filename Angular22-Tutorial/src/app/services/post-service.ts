@@ -6,7 +6,7 @@ import { Post } from '../models/post';
 export class PostService {
     private http = inject(HttpClient);
 
-    private endpoint = "https://jsonplaceholder.typicode.com/posts";
+    public endpoint = "https://jsonplaceholder.typicode.com/posts";
 
     // GET Request
     getPost(){
