@@ -9,11 +9,12 @@ import { dashboardMatchGuard } from './guards/dashboard-match-guard';
 import { Signal } from './pages/signal/signal';
 import { Parent } from './pages/parent/parent';
 import { OtherParent } from './pages/other-parent/other-parent';
+import { SignalForms } from './pages/signal-forms/signal-forms';
 
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'pages/other-parent',
+        redirectTo: 'pages/signal-forms',
         pathMatch: 'full',
     },
     {
@@ -31,6 +32,10 @@ export const routes: Routes = [
     {
         path: 'pages/signal',
         component: Signal 
+    },
+    {
+        path: 'pages/signal-forms',
+        component: SignalForms
     },
     {
         path: 'pages/parent',
